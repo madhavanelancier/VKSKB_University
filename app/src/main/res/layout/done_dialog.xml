@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center|center_vertical">
+
+    <FrameLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/white_corner_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_vertical"
+                android:orientation="vertical">
+
+                <com.vskub.certificate.common.GifImageView
+                    android:id="@+id/GifImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center|center_vertical"
+                    android:lineSpacingExtra="4dp"
+                    android:paddingBottom="10dp"
+                    android:text="This Certificate is Verified as Valid.\n\nKindly download the Certificate and Check the details."
+                    android:textColor="#00897B"
+                    android:textSize="13dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|center"
+            android:gravity="top|center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/cancelbut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:backgroundTint="@color/green"
+                app:srcCompat="@mipmap/done" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

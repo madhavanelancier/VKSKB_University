@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/homelay"
+        android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/top_corner"
+        android:id="@+id/backlay"
+        android:layout_gravity="right">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/cancel"
+            android:layout_gravity="center"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="4dp"
+            />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/namekannada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="6dp"
+                android:text="@string/other_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="20dp"
+                android:text="@string/other_title2"
+                android:textColor="@color/green"
+                android:textSize="11sp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/nameenglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="6dp"
+                android:text="@string/english_title"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/english_title2"
+                android:textColor="@color/green"
+                android:textSize="11sp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/bculogo" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/agri"
+                android:visibility="visible" />
+
+            <com.hanks.htextview.HTextView
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="35dp"
+                android:background="#000"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="scanclick"
+                android:text="Scan"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ugcetificatelay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/ug_certificate_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cetificatelay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/certificate_view_detail" />
+    </LinearLayout>
+
+</FrameLayout>

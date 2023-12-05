@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameenglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:lineSpacingExtra="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/english_title"
+                android:textColor="@color/pink"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="118dp"
+                android:layout_height="118dp"
+                android:src="@mipmap/place_male"
+                android:layout_marginTop="22dp"
+                android:id="@+id/studentimage"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:id="@+id/reglay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Register No :"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/sregno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="3dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/candlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Candidate Name :"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/sname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="3dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="Degree :"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/sdegree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="College Name :"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/scollege"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="118dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="Exam Date :"
+                    android:textColor="#111111"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/sdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="14dp"
+                android:textColor="#666666"
+                android:textStyle="bold"
+                android:text=""
+                android:layout_marginTop="16dp"
+                android:id="@+id/filepath"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

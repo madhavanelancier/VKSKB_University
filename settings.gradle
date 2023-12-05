@@ -1,0 +1,1 @@
+include ':app', ':qrcodescanner', ':image-zoomer', ':htextview-library'

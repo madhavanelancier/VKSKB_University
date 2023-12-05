@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.vatsal.imagezoomer'
+version = '1.0.2'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '26.0.3'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
+}
+
+bintray {
+    user = 'code-crusher'
+    key = '5ddba039b9c71692da10f261cc92394fe3f93d77'
+    pkg {
+        repo = 'maven'
+        name = 'ImageZoomer'
+
+        version {
+            name = 'image-zoomer'
+            desc = 'Image zooming library'
+            released = new Date()
+            vcsTag = '1.0.2'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/code-crusher/Image-Zoomer.git'
+        websiteUrl = 'https://github.com/code-crusher/Image-Zoomer'
+    }
+    configurations = ['archives']
+}

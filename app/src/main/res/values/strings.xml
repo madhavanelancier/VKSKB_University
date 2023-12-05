@@ -1,0 +1,13 @@
+<resources>
+    <string name="short_name">VSKUB</string>
+    <string name="app_name">Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary</string>
+    <string name="english_title">Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary</string>
+    <string name="english_title2">Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary</string>
+    <string name="other_title">ಕೃಷಿ ವಿಜ್ಞಾನ ವಿಶ್ವವಿದ್ಯಾಲಯ, ರಾಯಚೂರು</string>
+    <string name="other_title2">(ಹಿಂದೆ ಇದನ್ನು "ಕರ್ನಾಟಕ ರಾಜ್ಯ ಮಹಿಳಾ ವಿಶ್ವವಿದ್ಯಾಲಯ, ವಿಜಯಪುರ" ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ)</string>
+    <!--<string name="welcome1">This Certificate is invalid kindly contact the Bengaluru North University for further details.</string>-->
+    <string name="welcome1">This is an invalid certificate. Kindly Contact Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary for further details.</string>
+    <string name="welcome4">Certificate data not updated yet. Kindly Contact Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary for further details.</string>
+    <!--<string name="welcome1">This Certificate is invalid kindly contact the Akkamahadevi Women\'s University for further details.</string>-->
+    <string name="welcome2">Vijayanagara Sri Krishnadevaraya University (VSKU), Bellary Karnataka. Certificate Download app</string>
+</resources>

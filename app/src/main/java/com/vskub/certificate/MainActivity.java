@@ -40,6 +40,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.vskub.certificate.SpannableTextvw.Slice;
 import com.vskub.certificate.SpannableTextvw.SpannableTextView;
 import com.vskub.certificate.common.Appconstants;
@@ -429,13 +430,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                if(qrtype.equals("1")){
-                    progname.setText("Downloading..");
-                    progbar.show();
+                progname.setText("Downloading..");
+                progbar.show();
                 /*GetPdfLinkTask task=new GetPdfLinkTask();
                 task.execute();*/
-                    Log.e("stuid",studentid);
-                    pdflink = Appconstants.PDF_DOWNLOAD + "id=" + qr_id;
+                Log.e("stuid",studentid);
+                //pdflink = Appconstants.PDF_DOWNLOAD + "id=" + qr_id;
 
                 /*if(qr_id.startsWith("P")){
 
@@ -444,12 +444,14 @@ public class MainActivity extends Activity {
                     pdflink = Appconstants.PDF_DOWNLOAD2 + "id=" + studentid;
 
                 }*/
-                    downloadFileName = studentid+".pdf";
-                    new DownloadingTask().execute();
-                }
+                downloadFileName = studentid+".pdf";
+                new DownloadingTask().execute();
+
+               /* if(qrtype.equals("1")){
+                   }
                 else if(qrtype.equals("0")){
                     errorDialog_orange();
-                }
+                }*/
 
                 // downloadFileName = stu_regno.getText().toString().trim();
 
@@ -624,7 +626,7 @@ public class MainActivity extends Activity {
                     progbar.show();
                     /*GetPdfLinkTask task=new GetPdfLinkTask();
                     task.execute();*/
-                    pdflink = Appconstants.PDF_DOWNLOAD + "id=" + qr_id;
+                    //pdflink = Appconstants.PDF_DOWNLOAD + "id=" + qr_id;
 
                     /*if(qr_id.startsWith("P")){
 
@@ -734,13 +736,13 @@ public class MainActivity extends Activity {
             String resp = null;
 
             try {
-               /* JSONObject obj = new JSONObject();
-                obj.put("id", arg0[0]);
-                obj.put("type", arg0[1]);*/
+                /*SONObject obj = new JSONObject();
+                obj.put("qr", studentid);
+                //obj.put("type", arg0[1]);
+                ;*/
+                //Log.i("utilssCertificate URL: ",obj.toString()/*+"&type="+arg0[1]*/);
                 Connection con = new Connection();
-                Log.i("utilssCertificate URL: ", Appconstants.SCAN_CERTIFICATE + "id="+arg0[0]/*+"&type="+arg0[1]*/);
-
-                resp = con.connStringResponse(Appconstants.SCAN_CERTIFICATE + "id="+arg0[0]/*+"&type="+arg0[1]*/);
+                resp = con.connStringResponse(Appconstants.SCAN_CERTIFICATE+studentid);
 
                 return resp;
             } catch (Exception uee) {
@@ -757,13 +759,12 @@ public class MainActivity extends Activity {
                 progbar.dismiss();
             if (resp != null) {
                 try {
-                    JSONArray arr = new JSONArray(resp);
-                    JSONObject json = arr.getJSONObject(0);
-                    if (json.getString("Status").equals("Success")) {
-                        JSONArray jarr = json.getJSONArray("Response");
+                    JSONObject arr = new JSONObject(resp);
+                    if (arr.getString("status").equals("success")) {
+                        JSONArray jarr = arr.getJSONArray("response");
                         certificat_lay.setVisibility(View.GONE);
                         ugcertificatelay.setVisibility(View.VISIBLE);
-                        qrtype=json.getString("type");
+                        qrtype="1";
 
                         if(qrtype.equals("0")){
                             nmlay.setVisibility(View.GONE);
@@ -778,13 +779,23 @@ public class MainActivity extends Activity {
                             JSONObject object = jarr.getJSONObject(i);
                             ugcertificate();
                             stu_regno.setText(object.getString("reg_no"));
-                            stu_name.setText(object.getString("name"));
-                            qr_id=(object.getString("qr_id"));
+                            stu_name.setText(object.getString("student_name"));
+                            qr_id=(object.getString("mark_card"));
+                            pdflink = (object.getString("pdf"));
+
+                           if(!object.isNull("pdf")) {
+                               roundCircle();
+
+                           }
+
+
+
+
                             textView.setVisibility(View.VISIBLE);
                             // stu_college.setText(object.getString("college_name"));
                             //stu_degree.setText(object.getString("degree"));
                             //stu_year.setText(object.getString("exam_date"));
-                            if(!object.isNull("image")) {
+                           /* if(!object.isNull("image")) {
                                 stu_image.setVisibility(View.VISIBLE);
                                 if (object.getString("image").trim().length() != 0) {
                                     Picasso.get().load(object.getString("image")).placeholder(R.mipmap.place_male).into(stu_image);
@@ -794,8 +805,7 @@ public class MainActivity extends Activity {
                             }
                             else{
                                 stu_image.setVisibility(View.GONE);
-                            }
-                            roundCircle();
+                            }*/
                             doneDialog();
 
                         }
@@ -920,7 +930,7 @@ public class MainActivity extends Activity {
                 } else {
                     progbar.dismiss();
 
-                    pdflink = Appconstants.PDF_DOWNLOAD2 + "id=" + studentid;
+                    //pdflink = Appconstants.PDF_DOWNLOAD2 + "id=" + studentid;
                     downloadFileName = studentid+".pdf";
                     new DownloadingTask1().execute();
 
@@ -1118,8 +1128,8 @@ public class MainActivity extends Activity {
             String resp = null;
 
             try {
-                JSONObject obj = new JSONObject();
-                obj.put("type", certificatetype);
+                JsonObject obj = new JsonObject();
+                obj.addProperty("type", certificatetype);
                 Connection con = new Connection();
                 Log.i("utilssCertificate URL: ", Appconstants.DOWNLOAD_COUNT + "   " + obj.toString());
 

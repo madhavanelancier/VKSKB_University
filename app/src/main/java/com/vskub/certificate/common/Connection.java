@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.google.gson.JsonObject;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -211,7 +213,7 @@ public class Connection {
         return result;
     }
 
-    public String sendHttpPostjson2(String url, JSONObject jsonvalue, String session) throws IOException {
+    public String sendHttpPostjson2(String url, JsonObject jsonvalue, String session) throws IOException {
         HttpParams httpParameters = new BasicHttpParams();
         int timeoutConnection = 45000;
         HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
